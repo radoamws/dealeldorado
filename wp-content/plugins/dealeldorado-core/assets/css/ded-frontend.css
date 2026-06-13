@@ -1,0 +1,31 @@
+/* DealElDorado - Plugin Frontend Styles */
+
+/* Comparison widget */
+.ded-compare-widget .card-header { background: linear-gradient(135deg, #f8f9fa, white); }
+.ded-compare-widget { border-radius: 12px !important; overflow: hidden; }
+
+/* Price box shortcode */
+.ded-price-box { border-radius: 10px !important; }
+.ded-price-box:hover { box-shadow: 0 4px 20px rgba(0,0,0,.12) !important; }
+.ded-price-best { color: #e85d04; font-weight: 700; }
+
+/* Search bar shortcode */
+.ded-shortcode-search .input-group {
+  border-radius: 50px !important;
+  overflow: hidden;
+  border: 2px solid #dee2e6;
+}
+.ded-shortcode-search .input-group:focus-within {
+  border-color: #e85d04;
+  box-shadow: 0 0 0 3px rgba(232,93,4,.12);
+}
+
+/* Top deals shortcode */
+.ded-top-deals-widget .card { border-radius: 10px !important; transition: transform .2s; }
+.ded-top-deals-widget .card:hover { transform: translateY(-3px); }
+
+/* Disclaimer */
+.ded-disclaimer { font-size: 0.78rem; border-radius: 8px; }
+
+/* Alert styles */
+.ded-alert-form .form-control:focus { border-color: #e85d04; box-shadow: 0 0 0 3px rgba(232,93,4,.1); }

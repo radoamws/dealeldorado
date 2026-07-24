@@ -31,7 +31,7 @@
     <?php if (have_posts()): ?>
 
     <!-- Content Egg Live Search Results -->
-    <?php if (function_exists('content_egg_shortcode') && get_search_query()): ?>
+    <?php if (shortcode_exists('content-egg-block') && get_search_query()): ?>
     <div class="ded-live-comparison mb-4">
         <div class="card border-0 shadow-sm">
             <div class="card-header bg-white border-bottom py-3">

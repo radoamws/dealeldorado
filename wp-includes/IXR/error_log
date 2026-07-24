@@ -1,0 +1,20 @@
+[18-Jul-2026 09:48:51 UTC] PHP Fatal error:  Uncaught Error: Class 'IXR_Client' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-clientmulticall.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-clientmulticall.php on line 8
+[18-Jul-2026 16:55:00 UTC] PHP Fatal error:  Uncaught Error: Class 'IXR_Client' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-clientmulticall.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-clientmulticall.php on line 8
+[18-Jul-2026 16:55:20 UTC] PHP Fatal error:  Uncaught Error: Class 'IXR_Server' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-introspectionserver.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-introspectionserver.php on line 9
+[24-Jul-2026 00:16:33 UTC] PHP Fatal error:  Uncaught Error: Class 'IXR_Client' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-clientmulticall.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-clientmulticall.php on line 8
+[24-Jul-2026 00:16:40 UTC] PHP Fatal error:  Uncaught Error: Class 'IXR_Server' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-introspectionserver.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/IXR/class-IXR-introspectionserver.php on line 9

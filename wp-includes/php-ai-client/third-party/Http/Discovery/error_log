@@ -1,0 +1,8 @@
+[18-Jul-2026 09:48:35 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClientDependencies\Http\Discovery\ClassDiscovery' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Http/Discovery/Psr18ClientDiscovery.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Http/Discovery/Psr18ClientDiscovery.php on line 13
+[18-Jul-2026 09:48:38 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClientDependencies\Http\Discovery\ClassDiscovery' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Http/Discovery/Psr17FactoryDiscovery.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Http/Discovery/Psr17FactoryDiscovery.php on line 18

@@ -681,11 +681,6 @@ msgctxt "Pattern title"
 msgid "Title text and button on left with image on right"
 msgstr "Texte du titre et bouton à gauche avec image à droite"
 
-#: patterns/text-project-details.php:35 patterns/text-project-details.php:43
-msgctxt "Descriptive text for the feature area"
-msgid "The revitalized Art Gallery is set to redefine the cultural landscape of Toronto, serving as a nexus of artistic expression, community engagement, and architectural marvel. The expansion and renovation project pay homage to the Art Gallery's rich history while embracing the future, ensuring that the gallery remains a beacon of inspiration."
-msgstr "La Galerie d’Art revitalisée est sur le point de définir le paysage culturel de Toronto, servant de lien entre l’expression artistique, l’engagement communautaire et la merveille architecturale. Le projet d’agrandissement et de rénovation rend hommage à la riche histoire de la Galerie d’Art tout en s’ouvrant sur l’avenir, garantissant que la galerie reste une source d’inspiration."
-
 #: patterns/text-project-details.php:27
 msgctxt "Descriptive title for the feature area"
 msgid "With meticulous attention to detail and a commitment to excellence, we create spaces that inspire, elevate, and enrich the lives of those who inhabit them."
@@ -724,6 +719,11 @@ msgstr "Vivez l’expérience de la fusion entre l’imagination et l’expertis
 msgctxt "Sample feature content"
 msgid "Experience the fusion of imagination and expertise with Études Architectural Solutions."
 msgstr "Découvrez la fusion de l’imagination et de l’expertise avec Études Architectural Solutions."
+
+#: patterns/text-project-details.php:35 patterns/text-project-details.php:43
+msgctxt "Descriptive text for the feature area"
+msgid "The revitalized Art Gallery is set to redefine the cultural landscape of Toronto, serving as a nexus of artistic expression, community engagement, and architectural marvel. The expansion and renovation project pay homage to the Art Gallery's rich history while embracing the future, ensuring that the gallery remains a beacon of inspiration."
+msgstr "La Galerie d’Art revitalisée est sur le point de définir le paysage culturel de Toronto, servant de lien entre l’expression artistique, l’engagement communautaire et la merveille architecturale. Le projet d’agrandissement et de rénovation rend hommage à la riche histoire de la Galerie d’Art tout en s’ouvrant sur l’avenir, garantissant que la galerie reste une source d’inspiration."
 
 #: styles/maelstrom.json
 msgctxt "Style variation name"

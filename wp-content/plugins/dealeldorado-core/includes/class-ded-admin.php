@@ -23,6 +23,7 @@ class DED_Admin {
         add_action('admin_enqueue_scripts', array($this, 'enqueue_assets'));
         add_action('admin_post_ded_save_settings', array($this, 'save_settings'));
         add_action('admin_post_ded_reconfigure_modules', array($this, 'reconfigure_modules'));
+        add_action('admin_post_ded_create_samples', array($this, 'create_sample_products'));
         add_action('admin_notices', array($this, 'show_notices'));
     }
 
@@ -55,17 +56,17 @@ class DED_Admin {
     public function render_dashboard(): void {
         $configured   = get_option('ded_modules_configured', false);
         $configured_at = get_option('ded_modules_configured_at', 0);
-        $cj_active    = !empty(get_option('cegg_module_CjProducts', array())['is_active']);
-        $cb_active    = !empty(get_option('cegg_module_Clickbank', array())['is_active']);
-        $sv_active    = !empty(get_option('cegg_module_Viglink', array())['is_active']);
+        $cj_active    = !empty(get_option(DED_Setup::ce_option('CjProducts'), array())['is_active']);
+        $cb_active    = !empty(get_option(DED_Setup::ce_option('Clickbank'), array())['is_active']);
+        $sv_active    = !empty(get_option(DED_Setup::ce_option('Viglink'), array())['is_active']);
 
         include DED_PLUGIN_PATH . 'templates/admin-dashboard.php';
     }
 
     public function render_api_settings(): void {
-        $cj_settings = get_option('cegg_module_CjProducts', array());
-        $cb_settings = get_option('cegg_module_Clickbank', array());
-        $sv_settings = get_option('cegg_module_Viglink', array());
+        $cj_settings = get_option(DED_Setup::ce_option('CjProducts'), array());
+        $cb_settings = get_option(DED_Setup::ce_option('Clickbank'), array());
+        $sv_settings = get_option(DED_Setup::ce_option('Viglink'), array());
         include DED_PLUGIN_PATH . 'templates/admin-api-settings.php';
     }
 
@@ -85,30 +86,30 @@ class DED_Admin {
 
         // CJ Products
         if (isset($_POST['cj_access_token'])) {
-            $cj = get_option('cegg_module_CjProducts', array());
+            $cj = get_option(DED_Setup::ce_option('CjProducts'), array());
             $cj['access_token'] = sanitize_text_field($_POST['cj_access_token']);
             $cj['cid']          = sanitize_text_field($_POST['cj_company_id']);
             $cj['website_id']   = sanitize_text_field($_POST['cj_website_id']);
             $cj['is_active']    = !empty($_POST['cj_active']) ? 1 : 0;
-            update_option('cegg_module_CjProducts', $cj);
+            update_option(DED_Setup::ce_option('CjProducts'), $cj);
         }
 
         // Clickbank
         if (isset($_POST['cb_nickname'])) {
-            $cb = get_option('cegg_module_Clickbank', array());
+            $cb = get_option(DED_Setup::ce_option('Clickbank'), array());
             $cb['nickname']  = sanitize_text_field($_POST['cb_nickname']);
             $cb['apiKey']    = sanitize_text_field($_POST['cb_api_key']);
             $cb['is_active'] = !empty($_POST['cb_active']) ? 1 : 0;
-            update_option('cegg_module_Clickbank', $cb);
+            update_option(DED_Setup::ce_option('Clickbank'), $cb);
         }
 
         // Sovrn
         if (isset($_POST['sv_api_key'])) {
-            $sv = get_option('cegg_module_Viglink', array());
+            $sv = get_option(DED_Setup::ce_option('Viglink'), array());
             $sv['apiKey']    = sanitize_text_field($_POST['sv_api_key']);
             $sv['secretKey'] = sanitize_text_field($_POST['sv_secret_key']);
             $sv['is_active'] = !empty($_POST['sv_active']) ? 1 : 0;
-            update_option('cegg_module_Viglink', $sv);
+            update_option(DED_Setup::ce_option('Viglink'), $sv);
         }
 
         update_option('ded_modules_configured', true);
@@ -128,6 +129,21 @@ class DED_Admin {
         exit;
     }
 
+    public function create_sample_products(): void {
+        check_admin_referer('ded_create_samples');
+        if (!current_user_can('manage_options')) {
+            wp_die('Accès refusé');
+        }
+
+        $result = DED_Setup::instance()->create_sample_products();
+
+        // Stocker le résultat en transient pour l'afficher
+        set_transient('ded_samples_result', $result, 60);
+
+        wp_redirect(add_query_arg(array('page' => 'dealeldorado', 'samples' => '1'), admin_url('admin.php')));
+        exit;
+    }
+
     public function show_notices(): void {
         if (!str_contains($_GET['page'] ?? '', 'dealeldorado')) {
             return;
@@ -138,5 +154,26 @@ class DED_Admin {
         if (!empty($_GET['reconfigured'])): ?>
             <div class="notice notice-success is-dismissible"><p>✅ Modules reconfigurés depuis le fichier .env !</p></div>
         <?php endif;
+        if (!empty($_GET['samples'])):
+            $result = get_transient('ded_samples_result');
+            if ($result):
+                $count   = count($result['created']);
+                $created = array_filter($result['created'], fn($r) => $r['status'] === 'created');
+                $exists  = array_filter($result['created'], fn($r) => $r['status'] === 'exists');
+        ?>
+            <div class="notice notice-success is-dismissible">
+                <p>✅ <strong><?php echo count($created); ?> article(s) créé(s)</strong>
+                <?php if ($exists): ?>, <?php echo count($exists); ?> déjà existant(s)<?php endif; ?>.</p>
+                <?php foreach ($result['created'] as $p): if ($p['status'] === 'created'): ?>
+                <p>&nbsp;&nbsp;→ <a href="<?php echo esc_url($p['url']); ?>" target="_blank">
+                    <?php echo esc_html($p['title']); ?></a>
+                    <?php if (!empty($p['has_data'])): ?> ✅ données importées<?php else: ?> ⚠️ <em>ouvrir et cliquer "Update" dans Content Egg</em><?php endif; ?>
+                </p>
+                <?php endif; endforeach; ?>
+                <?php if (!empty($result['errors'])): ?>
+                <p style="color:red">Erreurs : <?php echo implode(', ', array_map('esc_html', $result['errors'])); ?></p>
+                <?php endif; ?>
+            </div>
+        <?php endif; endif;
     }
 }

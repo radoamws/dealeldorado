@@ -1,0 +1,84 @@
+[18-Jul-2026 09:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/background.php:108
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/background.php on line 108
+[18-Jul-2026 09:45:56 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/anchor.php:60
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/anchor.php on line 60
+[18-Jul-2026 09:45:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/block-visibility.php:168
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/block-visibility.php on line 168
+[18-Jul-2026 09:45:57 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/aria-label.php:67
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/aria-label.php on line 67
+[18-Jul-2026 09:45:58 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/shadow.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/shadow.php on line 79
+[18-Jul-2026 09:45:58 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/spacing.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/spacing.php on line 83
+[18-Jul-2026 09:45:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/custom-css.php:132
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/custom-css.php on line 132
+[18-Jul-2026 09:45:59 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/typography.php:701
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/typography.php on line 701
+[18-Jul-2026 09:46:00 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/position.php:145
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/position.php on line 145
+[18-Jul-2026 09:46:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/dimensions.php:167
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/dimensions.php on line 167
+[18-Jul-2026 09:46:01 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/block-style-variations.php:256
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/block-style-variations.php on line 256
+[18-Jul-2026 09:46:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/layout.php:1069
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/layout.php on line 1069
+[18-Jul-2026 09:46:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/settings.php:151
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/settings.php on line 151
+[18-Jul-2026 09:46:05 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/align.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/align.php on line 59
+[18-Jul-2026 09:46:06 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/generated-classname.php:66
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/generated-classname.php on line 66
+[18-Jul-2026 09:46:06 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/duotone.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/duotone.php on line 36
+[18-Jul-2026 09:46:07 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/colors.php:138
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/colors.php on line 138
+[18-Jul-2026 09:46:07 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/border.php:168
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/border.php on line 168
+[18-Jul-2026 09:46:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/elements.php:261
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/elements.php on line 261
+[18-Jul-2026 09:46:09 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Block_Supports' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/custom-classname.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/custom-classname.php on line 59
+[18-Jul-2026 09:46:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_filter() in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/auto-register.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/block-supports/auto-register.php on line 61

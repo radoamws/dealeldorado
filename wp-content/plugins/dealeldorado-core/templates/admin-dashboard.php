@@ -70,6 +70,14 @@
                         <i class="fas fa-sync me-1"></i> Reconfigurer depuis .env
                     </button>
                 </form>
+                <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" style="display:inline"
+                      onsubmit="return confirm('Créer 5 articles produits d\'exemple ? Les données seront importées depuis les APIs CJ, Clickbank et Sovrn.')">
+                    <?php wp_nonce_field('ded_create_samples'); ?>
+                    <input type="hidden" name="action" value="ded_create_samples">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-magic me-1"></i> Créer 5 produits d'exemple
+                    </button>
+                </form>
                 <?php if (class_exists('\ContentEgg\application\Plugin')): ?>
                 <a href="<?php echo esc_url(admin_url('admin.php?page=content-egg')); ?>" class="btn btn-outline-secondary">
                     <i class="fas fa-egg me-1"></i> Content Egg Pro

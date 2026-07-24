@@ -1,0 +1,20 @@
+[18-Jul-2026 09:47:40 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Providers\AbstractProvider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiProvider.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiProvider.php on line 16
+[18-Jul-2026 09:47:41 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/GenerateTextApiBasedProviderAvailability.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/GenerateTextApiBasedProviderAvailability.php on line 23
+[18-Jul-2026 09:47:42 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/ListModelsApiBasedProviderAvailability.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/ListModelsApiBasedProviderAvailability.php on line 18
+[18-Jul-2026 09:47:43 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiBasedModelMetadataDirectory.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiBasedModelMetadataDirectory.php on line 21
+[18-Jul-2026 09:47:44 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiBasedModel.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiBasedModel.php on line 23

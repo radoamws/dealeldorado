@@ -1,0 +1,4 @@
+[18-Jul-2026 09:47:57 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClientDependencies\Http\Discovery\Strategy\DiscoveryStrategy' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/Abstracts/AbstractClientDiscoveryStrategy.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/Abstracts/AbstractClientDiscoveryStrategy.php on line 20

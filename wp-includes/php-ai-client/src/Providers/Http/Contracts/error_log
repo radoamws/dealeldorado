@@ -1,0 +1,4 @@
+[18-Jul-2026 09:47:55 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClient\Common\Contracts\WithJsonSchemaInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/Contracts/RequestAuthenticationInterface.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/Contracts/RequestAuthenticationInterface.php on line 13

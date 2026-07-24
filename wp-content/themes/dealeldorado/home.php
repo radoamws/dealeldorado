@@ -189,7 +189,7 @@
 </section>
 
 <!-- Content Egg Comparison Block (si Content Egg actif) -->
-<?php if (function_exists('content_egg_shortcode')): ?>
+<?php if (shortcode_exists('content-egg-block')): ?>
 <section class="ded-section-comparison py-5 bg-white">
     <div class="container-xl">
         <h2 class="ded-section-title text-center mb-4">

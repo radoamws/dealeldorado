@@ -1,0 +1,8 @@
+[18-Jul-2026 09:48:31 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClientDependencies\Psr\Http\Client\ClientExceptionInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Client/NetworkExceptionInterface.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Client/NetworkExceptionInterface.php on line 13
+[18-Jul-2026 09:48:31 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClientDependencies\Psr\Http\Client\ClientExceptionInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Client/RequestExceptionInterface.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Client/RequestExceptionInterface.php on line 13

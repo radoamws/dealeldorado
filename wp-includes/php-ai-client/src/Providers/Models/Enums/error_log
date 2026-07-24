@@ -1,0 +1,8 @@
+[18-Jul-2026 09:48:17 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractEnum' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Models/Enums/OptionEnum.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Models/Enums/OptionEnum.php on line 65
+[18-Jul-2026 09:48:18 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractEnum' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Models/Enums/CapabilityEnum.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Models/Enums/CapabilityEnum.php on line 29

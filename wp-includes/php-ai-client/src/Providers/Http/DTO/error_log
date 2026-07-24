@@ -1,0 +1,16 @@
+[18-Jul-2026 09:48:02 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractDataTransferObject' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/Request.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/Request.php on line 31
+[18-Jul-2026 09:48:02 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractDataTransferObject' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/ApiKeyRequestAuthentication.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/ApiKeyRequestAuthentication.php on line 19
+[18-Jul-2026 09:48:03 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractDataTransferObject' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/Response.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/Response.php on line 25
+[18-Jul-2026 09:48:03 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractDataTransferObject' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/RequestOptions.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/Http/DTO/RequestOptions.php on line 23

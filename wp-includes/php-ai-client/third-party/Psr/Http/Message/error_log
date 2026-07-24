@@ -1,0 +1,12 @@
+[18-Jul-2026 09:48:27 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClientDependencies\Psr\Http\Message\MessageInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Message/ResponseInterface.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Message/ResponseInterface.php on line 20
+[18-Jul-2026 09:48:28 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClientDependencies\Psr\Http\Message\MessageInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Message/RequestInterface.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Message/RequestInterface.php on line 24
+[18-Jul-2026 09:48:29 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Message/ServerRequestInterface.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/third-party/Psr/Http/Message/ServerRequestInterface.php on line 43

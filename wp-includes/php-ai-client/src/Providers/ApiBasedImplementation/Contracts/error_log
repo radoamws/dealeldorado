@@ -1,0 +1,4 @@
+[18-Jul-2026 09:47:45 UTC] PHP Fatal error:  Uncaught Error: Interface 'WordPress\AiClient\Providers\Models\Contracts\ModelInterface' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/Contracts/ApiBasedModelInterface.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/Contracts/ApiBasedModelInterface.php on line 16

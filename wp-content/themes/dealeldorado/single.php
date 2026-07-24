@@ -47,7 +47,7 @@
                     </div>
 
                     <!-- Content Egg Price Comparison Block -->
-                    <?php if (function_exists('content_egg_shortcode')): ?>
+                    <?php if (shortcode_exists('content-egg-block')): ?>
                     <div class="ded-comparison-block mb-4">
                         <div class="d-flex align-items-center mb-3">
                             <i class="fas fa-balance-scale text-primary me-2 fs-5"></i>
@@ -64,7 +64,7 @@
                     </div>
 
                     <!-- Content Egg Additional Blocks -->
-                    <?php if (function_exists('content_egg_shortcode')): ?>
+                    <?php if (shortcode_exists('content-egg-block')): ?>
                     <div class="mt-4 pt-4 border-top">
                         <h4 class="fw-bold mb-3">
                             <i class="fas fa-store me-2 text-success"></i>
@@ -86,17 +86,6 @@
                     <?php the_tags('<div class="mt-4 pt-3 border-top"><i class="fas fa-hashtag me-2 text-muted"></i>', ' ', '</div>'); ?>
                 </div>
             </article>
-
-            <!-- Author Box -->
-            <div class="ded-author-box card border-0 shadow-sm p-4 mb-4">
-                <div class="d-flex gap-3 align-items-start">
-                    <?php echo get_avatar(get_the_author_meta('ID'), 64, '', '', array('class' => 'rounded-circle')); ?>
-                    <div>
-                        <h5 class="fw-bold mb-1"><?php the_author(); ?></h5>
-                        <p class="text-muted small mb-0"><?php the_author_meta('description'); ?></p>
-                    </div>
-                </div>
-            </div>
 
             <!-- Post Navigation -->
             <div class="d-flex justify-content-between gap-3 mb-4">
@@ -148,15 +137,11 @@
                     <p class="small mb-3 text-white-75">
                         <?php esc_html_e('Soyez notifié quand le prix baisse', 'dealeldorado'); ?>
                     </p>
-                    <?php if (function_exists('content_egg_shortcode')): ?>
-                        <?php echo do_shortcode('[cegg_price_alert]'); ?>
-                    <?php else: ?>
                     <input type="email" class="form-control form-control-sm mb-2"
                            placeholder="<?php esc_attr_e('Votre email', 'dealeldorado'); ?>">
                     <button class="btn btn-light btn-sm w-100 fw-semibold text-primary">
                         <?php esc_html_e('Créer une alerte', 'dealeldorado'); ?>
                     </button>
-                    <?php endif; ?>
                 </div>
             </div>
 

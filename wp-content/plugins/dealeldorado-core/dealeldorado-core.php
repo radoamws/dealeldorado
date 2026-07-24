@@ -60,6 +60,8 @@ add_action('wp_enqueue_scripts', function () {
  * Activation hook.
  */
 register_activation_hook(__FILE__, function () {
+    // Supprimer le flag pour forcer la reconfiguration avec les bonnes clés
+    delete_option('ded_modules_configured');
     DED_Env_Loader::load(ABSPATH . '.env');
     DED_Setup::instance()->configure_content_egg_modules();
     flush_rewrite_rules();

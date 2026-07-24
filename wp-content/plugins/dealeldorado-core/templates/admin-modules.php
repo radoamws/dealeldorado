@@ -33,7 +33,7 @@ $modules_info = array(
 );
 
 foreach ($modules_info as $module_id => $info):
-    $settings  = get_option('cegg_module_' . $module_id, array());
+    $settings  = get_option(DED_Setup::ce_option($module_id), array());
     $is_active = !empty($settings['is_active']);
     $has_config = !empty($settings);
 ?>

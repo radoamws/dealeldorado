@@ -1,0 +1,32 @@
+[07-Jul-2026 07:25:06 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[07-Jul-2026 07:25:19 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17
+[13-Jul-2026 05:50:13 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[13-Jul-2026 05:50:25 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17
+[13-Jul-2026 17:22:33 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[13-Jul-2026 17:22:47 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17
+[24-Jul-2026 00:16:16 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php on line 17
+[24-Jul-2026 00:16:28 UTC] PHP Fatal error:  Uncaught Error: Class 'WP_Sitemaps_Provider' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php on line 17

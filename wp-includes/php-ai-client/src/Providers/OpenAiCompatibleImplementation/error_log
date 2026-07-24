@@ -1,0 +1,12 @@
+[18-Jul-2026 09:48:07 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModel' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleImageGenerationModel.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleImageGenerationModel.php on line 57
+[18-Jul-2026 09:48:08 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModel' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleTextGenerationModel.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleTextGenerationModel.php on line 64
+[18-Jul-2026 09:48:08 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModelMetadataDirectory' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleModelMetadataDirectory.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleModelMetadataDirectory.php on line 22

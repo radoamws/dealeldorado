@@ -1,0 +1,12 @@
+[18-Jul-2026 09:46:28 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractEnum' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Messages/Enums/MessagePartTypeEnum.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Messages/Enums/MessagePartTypeEnum.php on line 21
+[18-Jul-2026 09:46:28 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractEnum' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Messages/Enums/MessageRoleEnum.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Messages/Enums/MessageRoleEnum.php on line 17
+[18-Jul-2026 09:46:29 UTC] PHP Fatal error:  Uncaught Error: Class 'WordPress\AiClient\Common\AbstractEnum' not found in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Messages/Enums/MessagePartChannelEnum.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/amweb/public_html/dealeldorado.com/wp-includes/php-ai-client/src/Messages/Enums/MessagePartChannelEnum.php on line 17

@@ -332,22 +332,13 @@ Affiche un graphique d'évolution du prix sur 30/90 jours.
 
 ## Mise en production
 
-### Avant de passer sur dealeldorado.com
+Le site est en production sur un VPS Infomaniak avec un pipeline CI/CD automatisé : chaque `git push` sur `main` redéploie le site en ~30-60 secondes.
 
-1. **Réglages → Général** : changer l'URL du site vers `https://dealeldorado.com`
-2. **Réglages → Permaliens** : sélectionner "Nom de l'article"
-3. Exporter la base de données MySQL
-4. Uploader les fichiers sur le serveur
-5. Importer la base de données
-6. Mettre à jour le `wp-config.php` avec les credentials de production
-7. Vérifier le `.env` est présent sur le serveur
-8. Activer HTTPS (SSL gratuit Let's Encrypt)
+📄 **Voir [DEPLOIEMENT.md](DEPLOIEMENT.md)** pour : l'architecture serveur, le fonctionnement du CI/CD, le déploiement manuel de secours, le rollback, les sauvegardes, et la checklist des étapes restantes (bascule DNS, SSL, rotation des clés API).
 
 ### Fichier .env en production
 
-⚠️ **Important** : Ajouter `/wp-content/uploads/` et `.env` dans `.gitignore` si vous utilisez Git.
-
-Le `.env` doit être présent à la racine du WordPress en production pour que les APIs fonctionnent.
+Le `.env` (non versionné, dans `.gitignore`) est présent directement sur le serveur à la racine du WordPress (`/var/www/dealeldorado.com/.env`) — voir [DEPLOIEMENT.md](DEPLOIEMENT.md#secrets--fichiers-non-versionnés) pour le modifier.
 
 ### SEO
 

@@ -1,0 +1,8 @@
+# Secrets et configuration locale/serveur - jamais versionnés
+.env
+/.env
+wp-config-local.php
+/wp-config-local.php
+
+# Logs runtime WooCommerce (générés automatiquement, pas de valeur en historique git)
+wp-content/uploads/wc-logs/

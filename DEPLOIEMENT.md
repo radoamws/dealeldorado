@@ -154,6 +154,12 @@ gunzip -c /var/backups/dealeldorado/db-AAAA-MM-JJ_HHMMSS.sql.gz | sudo mysql dea
 - Logs : `/var/log/dealeldorado-backup.log`.
 - ⚠️ Sauvegarde locale uniquement (sur le même disque que le site) — à améliorer plus tard avec un envoi hors-site (S3/Object Storage Infomaniak) si le contenu devient critique.
 
+## État de la bascule
+
+- ✅ **DNS** : `dealeldorado.com` et `www` pointent vers `179.237.110.111`.
+- ✅ **SSL** : certificat Let's Encrypt actif (`dealeldorado.com` + `www.dealeldorado.com`), expire le 2026-10-26, renouvellement automatique via `certbot.timer`. HTTP redirige vers HTTPS.
+- ⚠️ Ancien hébergement (PlanetHoster) toujours en place — à résilier quand tu confirmes que tout fonctionne bien sur le VPS.
+
 ## Ce qu'il te reste à faire
 
 1. **Faire tourner les clés API compromises** (elles ont été exposées publiquement sur GitHub avant le nettoyage de l'historique) :
@@ -162,15 +168,8 @@ gunzip -c /var/backups/dealeldorado/db-AAAA-MM-JJ_HHMMSS.sql.gz | sudo mysql dea
    - **CJ Affiliate** : régénérer le `PERSONAL_ACCESS_TOKEN`.
    - **Sovrn** : régénérer `API_KEY`/`SECRET_KEY`.
    - Une fois faites, mets à jour `/var/www/dealeldorado.com/.env` sur le serveur (pas besoin de redéployer).
-2. **Bascule DNS** : pointe l'enregistrement A de `dealeldorado.com` (et `www`) vers `179.237.110.111` chez ton registrar, quand tu es prêt à couper l'ancien hébergement.
-3. **SSL** une fois le DNS propagé :
-   ```bash
-   ssh -i ~/.ssh/dealeldorado_vps ubuntu@179.237.110.111
-   sudo certbot --nginx -d dealeldorado.com -d www.dealeldorado.com
-   ```
-   Certbot configure le renouvellement automatique (déjà activé via `certbot.timer`).
-4. **Lever le noindex** quand le site est prêt pour Google : Réglages → Lecture → décocher *« Décourager les moteurs de recherche »* (actuellement coché intentionnellement).
-5. **Bug pré-existant repéré pendant la migration** : dans `.env`, la clé `API_KEY` est utilisée à la fois pour CJ Products et pour Sovrn (même nom de variable) — la valeur de Sovrn écrase celle de CJ en mémoire (`DED_Env_Loader`). Vérifie si `class-ded-admin.php`/les modules Content Egg lisent bien la bonne valeur pour CJ ; si besoin, renommer une des deux clés dans `.env` et dans le code qui les lit.
+2. **Lever le noindex** quand le site est prêt pour Google : Réglages → Lecture → décocher *« Décourager les moteurs de recherche »* (actuellement coché intentionnellement).
+3. **Bug pré-existant repéré pendant la migration** : dans `.env`, la clé `API_KEY` est utilisée à la fois pour CJ Products et pour Sovrn (même nom de variable) — la valeur de Sovrn écrase celle de CJ en mémoire (`DED_Env_Loader`). Vérifie si `class-ded-admin.php`/les modules Content Egg lisent bien la bonne valeur pour CJ ; si besoin, renommer une des deux clés dans `.env` et dans le code qui les lit.
 
 ## Checklist pour une prochaine mise en prod
 

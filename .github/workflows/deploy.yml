@@ -24,9 +24,9 @@ jobs:
             cd ${{ secrets.DEPLOY_PATH }}
             git fetch origin main
             git reset --hard origin/main
-            chgrp -R www-data wp-content || true
-            find wp-content -type d -exec chmod 2775 {} \; || true
-            find wp-content -type f -exec chmod 664 {} \; || true
+            chgrp -R www-data wp-content 2>/dev/null || true
+            find wp-content -type d -exec chmod 2775 {} \; 2>/dev/null || true
+            find wp-content -type f -exec chmod 664 {} \; 2>/dev/null || true
             wp cache flush
             wp rewrite flush --hard
-            curl -sf -o /dev/null http://localhost/ && echo "Smoke test OK" || (echo "Smoke test FAILED" && exit 1)
+            curl -sf -o /dev/null https://dealeldorado.com/ && echo "Smoke test OK" || (echo "Smoke test FAILED" && exit 1)

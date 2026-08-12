@@ -9,6 +9,9 @@ use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartPat
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartReminderPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartWithDiscountPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AskForReviewPostPurchasePattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\BirthdayEmailPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\BookingAutomationEmailPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\CategoryPurchaseFollowUpPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\EducationalCampaignPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\EventInvitationPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\FirstPurchaseThankYouPattern;
@@ -19,6 +22,8 @@ use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\PostPurchaseThan
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\ProductPurchaseFollowUpPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\ProductRestockNotificationPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\SaleAnnouncementPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\SubscriptionAutomationEmailPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\TagPurchaseFollowUpPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\WelcomeEmailPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\WelcomeWithDiscountEmailPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\WinBackCustomerPattern;
@@ -91,6 +96,43 @@ class PatternsController {
     return null;
   }
 
+  /**
+   * Get the static preview content of a pattern by name.
+   *
+   * Returns the placeholder content (get_content()) shown in the editor's
+   * pattern preview rather than the dynamic email content. This is suitable for
+   * previewing automation template emails before an automation exists, when no
+   * cart/order context is available to populate dynamic blocks.
+   *
+   * @param string $patternName The pattern name (e.g., 'welcome-email-content')
+   * @return string|null The static pattern content or null if not found
+   */
+  public function getPatternPreviewContent(string $patternName): ?string {
+    $this->ensurePatternsInitialized();
+
+    foreach ($this->patterns as $pattern) {
+      if ($pattern->get_name() === $patternName) {
+        // Apply the same filter used in registerPatterns so integrations that
+        // modify pattern properties stay consistent with registered patterns.
+        $patternData = $this->wp->applyFilters('mailpoet_email_editor_integration_register_pattern', [
+          'name' => $pattern->get_namespace() . '/' . $pattern->get_name(),
+          'properties' => $pattern->get_properties(),
+          'email_content' => $pattern->get_email_content(),
+        ], $pattern);
+
+        if (!is_array($patternData)) {
+          return null;
+        }
+
+        $properties = $patternData['properties'] ?? null;
+        $content = is_array($properties) ? ($properties['content'] ?? null) : null;
+        return is_string($content) ? $content : null;
+      }
+    }
+
+    return null;
+  }
+
   private function ensurePatternsInitialized(): void {
     if (!empty($this->patterns)) {
       return;
@@ -105,6 +147,7 @@ class PatternsController {
       new ProductRestockNotificationPattern($this->cdnAssetUrl),
       new NewArrivalsAnnouncementPattern($this->cdnAssetUrl),
       new WelcomeEmailPattern($this->cdnAssetUrl),
+      new BirthdayEmailPattern($this->cdnAssetUrl),
     ];
 
     // WooCommerce-dependent patterns (uses product blocks or purchase/abandoned-cart categories)
@@ -113,8 +156,27 @@ class PatternsController {
         new FirstPurchaseThankYouPattern($this->cdnAssetUrl),
         new PostPurchaseThankYouPattern($this->cdnAssetUrl),
         new ProductPurchaseFollowUpPattern($this->cdnAssetUrl),
+        new TagPurchaseFollowUpPattern($this->cdnAssetUrl),
+        new CategoryPurchaseFollowUpPattern($this->cdnAssetUrl),
+        new WinBackCustomerPattern($this->cdnAssetUrl, true),
+        new WinBackCustomerPattern($this->cdnAssetUrl, false, true),
         new AbandonedCartPattern($this->cdnAssetUrl),
         new AbandonedCartReminderPattern($this->cdnAssetUrl),
+        new AskForReviewPostPurchasePattern($this->cdnAssetUrl, 'positive-follow-up'),
+        new AskForReviewPostPurchasePattern($this->cdnAssetUrl, 'negative-follow-up'),
+        new SubscriptionAutomationEmailPattern($this->cdnAssetUrl, SubscriptionAutomationEmailPattern::VARIANT_PURCHASE),
+        new SubscriptionAutomationEmailPattern($this->cdnAssetUrl, SubscriptionAutomationEmailPattern::VARIANT_RENEWAL),
+        new SubscriptionAutomationEmailPattern($this->cdnAssetUrl, SubscriptionAutomationEmailPattern::VARIANT_FAILED_RENEWAL),
+        new SubscriptionAutomationEmailPattern($this->cdnAssetUrl, SubscriptionAutomationEmailPattern::VARIANT_CHURNED),
+        new SubscriptionAutomationEmailPattern($this->cdnAssetUrl, SubscriptionAutomationEmailPattern::VARIANT_TRIAL_ENDED),
+        new SubscriptionAutomationEmailPattern($this->cdnAssetUrl, SubscriptionAutomationEmailPattern::VARIANT_WIN_BACK),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_ABANDONED_SPOT),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_NEW_BOOKING),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_PRE_VISIT_REMINDER),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_PRE_VISIT_WHAT_TO_EXPECT),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_PRE_VISIT_TIPS),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_POST_VISIT_REVIEW),
+        new BookingAutomationEmailPattern($this->cdnAssetUrl, BookingAutomationEmailPattern::VARIANT_NEXT_BOOKING_NUDGE),
       ]);
 
       if ($this->wooCommerceHelper->wcSupportsOrderReviewUrl()) {
@@ -128,8 +190,10 @@ class PatternsController {
       if ($wooCommerceVersion && version_compare($wooCommerceVersion, self::MIN_WOOCOMMERCE_VERSION_FOR_GENERATED_COUPON_BLOCK, '>=')) {
         $this->patterns = array_merge($this->patterns, [
           new WelcomeWithDiscountEmailPattern($this->cdnAssetUrl),
+          new BirthdayEmailPattern($this->cdnAssetUrl, true),
           new WinBackCustomerPattern($this->cdnAssetUrl),
           new AbandonedCartWithDiscountPattern($this->cdnAssetUrl),
+          new AskForReviewPostPurchasePattern($this->cdnAssetUrl, 'reward-positive'),
         ]);
       }
     }
@@ -256,6 +320,11 @@ class PatternsController {
         'label' => _x('Welcome', 'Block pattern category', 'mailpoet'),
         'description' => __('A collection of welcome email layouts.', 'mailpoet'),
       ],
+      [
+        'name' => 'celebrations',
+        'label' => _x('Celebrations', 'Block pattern category', 'mailpoet'),
+        'description' => __('A collection of celebration email layouts.', 'mailpoet'),
+      ],
     ];
 
     // WooCommerce-dependent categories
@@ -269,6 +338,21 @@ class PatternsController {
         'name' => 'abandoned-cart',
         'label' => _x('Abandoned cart', 'Block pattern category', 'mailpoet'),
         'description' => __('A collection of abandoned cart email layouts.', 'mailpoet'),
+      ];
+      $categories[] = [
+        'name' => 'review',
+        'label' => _x('Review', 'Block pattern category', 'mailpoet'),
+        'description' => __('A collection of review follow-up email layouts.', 'mailpoet'),
+      ];
+      $categories[] = [
+        'name' => 'subscriptions',
+        'label' => _x('Subscriptions', 'Block pattern category', 'mailpoet'),
+        'description' => __('A collection of subscription email layouts.', 'mailpoet'),
+      ];
+      $categories[] = [
+        'name' => 'bookings',
+        'label' => _x('Bookings', 'Block pattern category', 'mailpoet'),
+        'description' => __('A collection of booking email layouts.', 'mailpoet'),
       ];
     }
 

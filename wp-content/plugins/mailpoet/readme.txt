@@ -3,7 +3,7 @@ Contributors: mailpoet, woocommerce, automattic
 Tags: email marketing, post notification, woocommerce emails, email automation, newsletter
 Requires at least: 6.9
 Tested up to: 7.0
-Stable tag: 5.29.0
+Stable tag: 5.35.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -227,15 +227,10 @@ Check our [Knowledge Base](https://kb.mailpoet.com) or contact us through our [s
 
 == Changelog ==
 
-= 5.29.0 - 2026-06-09 =
-* Added: Email content for welcome automation templates;
-* Added: Email content for abandoned cart reminder automation;
-* Added: Delete email button in automation's "Send email" settings;
-* Improved: Automations menu highlighting when editing automation emails;
-* Fixed: Archive links for emails with Unicode subject characters;
-* Fixed: Prevent the email preview from overwriting or reading from an existing order whose id collides with the preview dummy order id;
-* Fixed: An issue where saving subscription preferences could change other subscriber details;
-* Fixed: Fix MailPoet REST endpoints on sites using plain permalinks;
-* Fixed: Post notification history titles overflowing into other columns.
+= 5.35.1 - 2026-08-10 =
+* Changed: The option for subscribers to opt out of email open and click tracking is now hidden unless you turn on the new Subscriber choice setting in Settings > Advanced;
+* Fixed: Links sent to subscribers who opted out of tracking are no longer rewritten to redirect through click tracking;
+* Fixed: Links whose address contains a personalisation shortcode now work for subscribers who opted out of open and click tracking;
+* Fixed: Visual issues in the MailPoet admin with WordPress 7.1.
 
 [See the changelog for all versions.](https://github.com/mailpoet/mailpoet/blob/trunk/mailpoet/changelog.txt)

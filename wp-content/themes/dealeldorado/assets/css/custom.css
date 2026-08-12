@@ -422,8 +422,3 @@ a:hover { color: var(--ded-primary-dark); }
 /* === Utility === */
 .text-white-75 { color: rgba(255,255,255,.75) !important; }
 .fw-black { font-weight: 900 !important; }
-
-
-.ded-header{
-  background-color: #e85d04;
-}
